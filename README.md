@@ -1,73 +1,49 @@
+# Pandas as Dataframe
 
-**Pandas_as_dataframe **
-import pandas as pd
-import numpy as np
+## Overview
 
-# --- Creating a DataFrame with NaN ---
-df2 = pd.DataFrame(
-    {
-        "Name": [
-            "Varun, Mr harris",
-            "Allen",
-            np.nan
-        ],
-        "Age" : [22, 35, 58],
-        "Sex" : ["male", "male", "male"]
-    }
-)
-# df2
+This Jupyter Notebook (`Pandas_as_Dataframe (1).ipynb`) provides a basic demonstration of creating and displaying a **pandas DataFrame** in Python. It's suitable for beginners or anyone who wants to understand how tabular data (like spreadsheets or database tables) can be handled using the `pandas` library.
 
-# --- Creating the main DataFrame ---
-df = pd.DataFrame(
-    {
-        "Name": [
-            "Varun, Mr harris",
-            "Allen",
-            "Bob John"
-        ],
-        "Age" : [22, 35, 58],
-        "Sex" : ["male", "male", "male"]
-    }
-)
+---
 
-# We can get the Dtypes of the columns of the df
-# df.dtypes
+## Contents
 
-# Accessing a column gives a pandas Series
-age_series = df['Age']
-# type(age_series) returns <class 'pandas.core.series.Series'>
+The notebook covers the following steps:
 
-# Alternative access for a column
-# df.Name
+1.  **Install libraries:** Checks that necessary libraries like `pandas` and `numpy` are available.
+2.  **Import libraries:** Imports the required libraries for data manipulation.
+3.  **Create a DataFrame:** Shows how to build a DataFrame from a Python dictionary using sample data (Name, Age, Sex).
+4.  **Display the DataFrame:** Renders the resulting DataFrame in the notebook output.
 
-# Explicitly creating a Series
-ages = pd.Series([22, 35, 58], name="Age")
-# ages
+---
 
-# Unnamed Series
-ages1 = pd.Series([22, 35, 58] )
-# ages1
+## Prerequisites
 
+* **Python 3.x**
+* **Jupyter Notebook** or **JupyterLab**
+* **`pandas`** (`pip install pandas`)
+* **`numpy`** (`pip install numpy`)
 
-# --- How to Read and Write Tabular Data ---
+---
 
-# Supported Formats:
-# CSV, XLSX, JSON, PARQUET, AVRO, SQL, XML, HDF5, GBQ, TSV
+## Usage
 
-# We can read tabular data using pandas' read_ methods:
-# pd.read_csv, pd.read_excel, pd.read_json, etc.
+Open the notebook in Jupyter or Google Colab and run the cells sequentially to see how DataFrames are constructed and displayed.
 
-# Example: Read a CSV (assuming 'titanic.csv' is available)
-# titanic = pd.read_csv("/content/titanic.csv") 
+---
 
-# Example: Save DataFrame to Excel
-# titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
+## Example
 
-# Inspecting the Data:
-# titanic.head()      # View first 5 rows (default)
-# titanic.head(20)    # View first 20 rows
-# titanic.tail(20)    # View last 20 rows
+The notebook constructs a sample DataFrame that looks like this:
 
-# Getting data types
-# titanic.dtypes      # Returns a Series
-# titanic.dtypes.reset_index() # Converts dtypes Series to a DataFrame
+| Name | Age | Sex |
+| :--- | :-- | :-- |
+| Varun, Mr harris | 22 | male |
+| Allen | 35 | male |
+| Bob John | 58 | male |
+
+---
+
+## License
+
+NA
